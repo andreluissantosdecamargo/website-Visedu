@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo</title>
+    <style>
+        body {
+
+            font-family: 'Poppins',sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #001E36; /* Fundo escuro */
+            color: #D0D4DF; /* Texto claro */
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            background-color: #001E36; /* Fundo do container escuro */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow:#001E36;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow:#001E36;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #f00; /* Muda a cor do ícone ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="close-btn" onclick="window.close();">&times;</button>
+        <h1>Assista ao Vídeo</h1>
+        <video id="videoPlayer" controls autoplay>
+            <source src="images/vejacomofunciona.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+
+    <script>
+        // Fechar a página após a reprodução do vídeo
+        document.getElementById('videoPlayer').addEventListener('ended', function() {
+            window.close();
+        });
+    </script>
+</body>
+</html>
