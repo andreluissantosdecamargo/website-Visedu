@@ -29,14 +29,6 @@ Nossa ferramenta é projetada para otimizar abordagens pedagógicas e apoiar o c
 
 ---
 
-## 🚀 **Comece Agora!**
-
-1. **Conecte-se** 🔗: [Acesse o painel de controle](#)
-2. **Inscreva-se** 📝: [Crie sua conta](#)
-3. **Veja como Funciona** 🎥: [Assista ao vídeo](video.html)
-
----
-
 ## 📦 **Tecnologias Utilizadas**
 
 - HTML5
