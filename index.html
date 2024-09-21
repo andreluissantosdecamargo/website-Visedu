@@ -23,10 +23,6 @@
                 <div class="square"></div>
                 <img src="images/logo visedu.png" alt="logo visedu">
             </div>
-            <ul class="nav-list">
-                <button class="Conecte-se">Conecte-se</button>
-                <button class="signup">Inscrever-se</button>
-            </ul>
             <div class="hamburger">
                 <div class="line line-1"></div>
                 <div class="line line-2"></div>
@@ -54,7 +50,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- feature section starts  -->
     <section class="feature mt-4">
@@ -116,45 +111,26 @@
         </div>
     </section>
 
-    <!-- test section starts  -->
-    <section class="test mt-6">
-        <div class="main">
-            <div class="img">
-                <img src="images/Person.png" alt="">
-            </div>
-            <div class="content">
-                <h4>Desenvolvedor</h4>
-                <p>Nossa equipe técnica garante o funcionamento perfeito da VisEdu, com inovação e segurança a cada linha de código.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- management section starts  -->
-    <section class="management mt-5">
-        <div class="main">
-            <div class="content">
-                <h4><span>Marketing</h4>
-                <p>Responsáveis por conectar a VisEdu ao mundo, nossa equipe de marketing atrai educadores e novos parceiros para a plataforma.</p>
-            </div>
-            <div class="img">
-                <img src="images/Person-1.png" alt="">
+    <!-- carousel team-->
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="card">
+                    <img src="images/Person.png" alt="Desenvolvedor">
+                    <h2>Desenvolvedor</h2>
+                    <p>Nossa equipe técnica garante o funcionamento perfeito da VisEdu, com inovação e segurança a cada linha de código.</p>
+                </div>
+                <div class="card">
+                    <img src="images/Person-1.png" alt="Marketing">
+                    <h2>Marketing</h2>
+                    <p>Responsáveis por conectar a VisEdu ao mundo, nossa equipe de marketing atrai educadores e novos parceiros para a plataforma.</p>
+                </div>
+                <div class="card">
+                    <img src="images/Person-2.png" alt="Design">
+                    <h2>Design</h2>
+                    <p>O time de design cria uma experiência visual cativante e intuitiva, garantindo uma interação simples e inspiradora.</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- discussion section starts  -->
-    <section class="discussion mt-5">
-        <div class="main">
-            <div class="img">
-                <img src="images/Person-2.png" alt="">
-            </div>
-            <div class="content">
-                <h4>Design</h4>
-                <p>O time de design cria uma experiência visual cativante e intuitiva, garantindo uma interação simples e inspiradora.</p>
-            </div>
-        </div>
-    </section>
-
 
     <!-- footer section starts  -->
     <footer class="mt-6">
@@ -199,6 +175,31 @@
             // Impede que o link padrão abra diretamente
             return false;
         }
+        let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const carousel = document.querySelector('.carousel');
+    const cards = document.querySelectorAll('.card');
+    const totalCards = cards.length;
+    const cardWidth = cards[0].offsetWidth + 20; // Considerando o gap entre os cards
+
+    // Atualizar o índice atual
+    currentIndex += direction;
+
+    // Impedir que o índice vá além dos limites do carrossel
+    if (currentIndex < 0) {
+        currentIndex = totalCards - 1; // Volta para o último card
+    } else if (currentIndex >= totalCards) {
+        currentIndex = 0; // Volta para o primeiro card
+    }
+
+    // Calcular a nova posição do carrossel
+    const newTranslateX = -currentIndex * cardWidth;
+
+    // Aplicar o novo valor de transform
+    carousel.style.transform = `translateX(${newTranslateX}px)`;
+}
+
 
     </script>
 </body>

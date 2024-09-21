@@ -385,13 +385,27 @@ background: linear-gradient(90deg, rgba(0,30,54,1) 0%, rgba(109,128,141,1) 50%, 
 mb-5{
     margin-bottom: 5rem;
 }
-.user-interface .main{
+.user-interface .main {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza horizontalmente */
     padding: 0px 30px;
     margin-top: 9rem;
+    gap: 2rem; /* Adiciona um espaço entre o MacBook e o texto */
+    text-align: justify; /* Centraliza o texto */
 }
+
+.user-interface .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza a imagem do MacBook */
+}
+
+.user-interface .content {
+    max-width: 600px; /* Limita a largura do texto */
+    text-align: jus; /* Centraliza o texto */
+}
+
 .user-interface .main .img{
     position: relative;
 }
@@ -874,4 +888,139 @@ footer .copyright p{
         align-items: center;
         gap: 1rem;
     }
+}
+
+/* Container do carrossel */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Carrossel */
+.carousel {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os cards */
+    transition: transform 0.5s ease-in-out;
+}
+/* novo*/
+/* Estilo da carousel-container */
+.carousel-container {
+    width: 100%;
+    overflow: hidden; /* Esconde elementos fora da área visível */
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Estilo da carousel */
+.carousel {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os cards "quebrem" para a linha de baixo quando necessário */
+    justify-content: center;
+    width: 100%; /* Ajusta a largura do carrossel para caber na tela */
+}
+
+/* Estilo responsivo para o card */
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: calc(33.333% - 20px); /* Cada card ocupará 1/3 da tela com espaçamento */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover para os cards */
+.card:hover {
+    transform: scale(1.09);
+}
+
+/* Estilos para a imagem dentro dos cards */
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Estilos para o título */
+.card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para o texto */
+.card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* Cards ocupam metade da tela em tablets */
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 20px); /* Cards ocupam 100% da tela em celulares */
+    }
+
+    .card img {
+        width: 80px; /* Ajusta o tamanho da imagem para telas menores */
+        height: 80px;
+    }
+}
+
+/*---*/
+
+/* Card individual */
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover para os cards */
+.card:hover {
+    transform: scale(1.09);
+}
+
+/* Estilos para a imagem */
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Estilos para o título */
+.card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para o texto */
+.card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
 }
