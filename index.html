@@ -197,6 +197,19 @@ function moveCarousel(direction) {
     carousel.style.transform = `translateX(${newTranslateX}px)`;
 }
 
+     // Bloquear o clique com o botão direito
+     document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert("Copyright Visedu© 2024 todos os direitos reservados.");
+    });
+
+    // Bloquear atalhos como Ctrl+C e Ctrl+U
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p')) {
+            e.preventDefault();
+            alert("Copyright Visedu© 2024 todos os direitos reservados.");
+        }
+    });
 
     </script>
 </body>
